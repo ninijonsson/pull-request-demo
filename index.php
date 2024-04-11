@@ -48,5 +48,59 @@ if (isset($_POST["name"], $_POST["breed"], $_POST["age"], $_POST["favoriteFood"]
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+<main>
+        <h1>Best Buddies</h1>
+
+        <?php
+        if ($message != "") {
+            echo "<p class=info>$message</p>";
+        }
+        ?>
+
+        <section id="dogs">
+        <?php
+        if (count($dogs) == 0) {
+            echo "<p>There are no dogs yet.</p>";
+        } else {
+            echo "
+            <div>
+                <div>Name</div>
+                <div>Breed</div>
+                <div>Age</div>
+                <div>Favorite Food</div>
+            </div>
+            ";
+        }
+
+        foreach ($dogs as $dog) {
+            $name = $dog["name"];
+            $breed = $dog["breed"];
+            $age = $dog["age"];
+            $food = $dog["favoriteFood"];
+
+            echo "
+            <div>
+                <div>$name</div>
+                <div>$breed</div>
+                <div>$age</div>
+                <div>$food</div>
+            </div>
+            ";
+        }
+        ?>
+        </section>
+
+        <h2>Add a new dog</h2>
+
+        <form action="index.php" method="POST">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="breed" placeholder="Breed">
+            <input type="number" name="age" placeholder="Age">
+            <input type="text" name="favoriteFood" placeholder="Favorite Food">
+            <button type="submit">Save</button>
+        </form>
+    </main>
+    
 </body>
 </html>
