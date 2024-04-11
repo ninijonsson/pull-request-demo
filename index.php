@@ -38,3 +38,15 @@ if (isset($_POST["name"], $_POST["breed"], $_POST["age"], $_POST["favoriteFood"]
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Buddies</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+</body>
+</html>
